@@ -69,8 +69,6 @@ async function onFormSubmit(e) {
 }
 
 async function onLoadMore(e) {
-  page += 1;
-
   setTimeout(() => {
     refs.loadMoreBtn.blur();
   }, 200);
