@@ -69,6 +69,8 @@ async function onFormSubmit(e) {
 }
 
 async function onLoadMore(e) {
+  page += 1;
+
   setTimeout(() => {
     refs.loadMoreBtn.blur();
   }, 200);
@@ -78,7 +80,6 @@ async function onLoadMore(e) {
 
   const markup = createGallery(data.hits);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
-  page += 1;
 
   const totalPage = (await data.totalHits) / 40;
   if (page >= totalPage) {
